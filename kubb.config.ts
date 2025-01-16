@@ -7,19 +7,18 @@ import { pluginZod } from '@kubb/plugin-zod'
 
 export default defineConfig({
   input: {
-    path: 'https://petstore.swagger.io/v2/swagger.json'
+    path: 'https://petstore.swagger.io/v2/swagger.json',
   },
   root: '.',
   name: '@ssil/generated',
   output: {
-    path: './src',
+    path: './src/gen',
     write: true,
     clean: true,
     extension: undefined,
     barrelType: 'named',
   },
-  hooks: {
-  },
+  hooks: {},
   plugins: [
     pluginOas({ validate: true }),
     pluginTs({
